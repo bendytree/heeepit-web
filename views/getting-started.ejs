@@ -1,0 +1,86 @@
+
+  <div class='grid-100 mobile-grid-100'>
+    <h2>Getting Started</h2>
+    <p>
+      All it takes is one line:
+    </p>
+    
+    <div class='code' style='font-size:16pt'>
+    &lt;script src='http://go.heeep.it?<span class='hi'>[LIST_OF_PARAMETERS]</span>'>&lt;/script>
+    </div>
+    
+    <p>
+      Parameters are comma separated, and there are three kinds of parameters:
+      <ul style='line-height:1.8em;'>
+        <li><b>Urls</b> - the url to any JavaScript, CSS, CoffeeScript, or LESS file</li>
+        <li><b>Packages</b> - the name of one of our packages (<a href='packages'>see the list</a>)</li>
+        <li><b>Flags</b> - special flags that effect how your assets are bundled</li>
+      </ul>
+    </p>
+    <br />
+    
+    <h2>Examples</h2>
+    <div class='code'>
+      <span class='comment'>&lt;!-- bundles two packages: jQuery and Underscore.js --></span><br />
+      &lt;script src='http://go.heeep.it?<span class='hi'>jquery,underscore</span>'>&lt;/script><br />
+      <br />
+      <span class='comment'>&lt;!-- bundles jQuery and your website's styles and scripts --></span><br />
+      &lt;script src='http://go.heeep.it?<span class='hi'>jquery,scripts/site.coffee,styles/site.less</span>'>&lt;/script><br />
+      <br />
+      <span class='comment'>&lt;!-- bundles prototype, a JavaScript file, and forces reload --></span><br />
+      &lt;script src='http://go.heeep.it?<span class='hi'>prototype,http://mysite.com/app.js,--force</span>'>&lt;/script><br />
+      <br />
+      <span class='comment'>&lt;!-- bundles jQuery UI, along with it's dependency jQuery &amp; styles --></span><br />
+      &lt;script src='http://go.heeep.it?<span class='hi'>jqueryui</span>'>&lt;/script><br />
+    </div>
+    
+    <br />
+    <h2>Urls Parameters</h2>
+    <p>
+       A Url parameter can be a full url like <span class='inline_code'>http://mysite.com/scripts/whatever.js</span> or
+       a relative url like <span class='inline_code'>scripts/whatever.js</span>. If a relative URL is used, then it is
+       resolved using the referrer url.
+    </p>
+    <p>
+       Styles are rendered first, then scripts. Packages are always rendered before custom scripts (urls).
+    </p>
+    <p>
+       If the referrer URL is <span class='inline_code'>localhost</span> or <span class='inline_code'>127.0.0.1</span>
+       then scripts and styles are not bundled, but referenced separately. This makes debugging easier. This behavior
+       can be overridden using the <span class='inline_code'>--debug</span> or <span class='inline_code'>--force</span> flags (see below).
+    </p>
+    <p>
+       For Less & CoffeeScript files that are referenced directly,
+       the client side parsing libraries are used for parsing.
+    </p>
+    
+    <br />
+    <h2>Package Parameters</h2>
+    <p>
+       To include a package, just include the package name like <span class='inline_code'>jquery</span>.
+       <a href='packages'>See the complete list of packages</a>.
+    </p>
+    <p>
+       If the package has dependencies then they are automatically included. Care is taken
+       not to include a single package multiple times.
+    </p>
+    <p>
+       For now, the latest version of a library is included. We hope to offer
+       versions someday.
+    </p>
+    
+    <br />
+    <h2>Flag Parameters</h2>
+    <p>
+       Special flags are preceded by two dashes. The options include:
+    </p>
+     <ul>
+       <li><b>--force</b> - forces reload of all references (clears the cache)</li>
+       <li><b>--debug</b> - causes the bundle to render in debug mode</li>
+       <li><b>--prod</b> - causes the bundle to render in production mode</li>
+       <li><b>--loud</b> - causes an alert to pop up if there are errors (instead of logging them)</li>
+     </ul>
+
+    
+  </div>
+  

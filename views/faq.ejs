@@ -1,0 +1,98 @@
+
+  <div class='grid-100 mobile-grid-100'>
+    <h2>F.A.Q.</h2>
+    <br />
+    
+    <div class='questions' style='line-height:1.6em;'></div>
+    <br />
+    
+    <h3>How does it work?</h3>
+    <p>
+      The first time a bundle of scripts is requested, they are each downloaded,
+      parsed (if LESS or CoffeeScript), minified, resolved of dependencies, sorted,
+      CSS is converted to JavaScript, cached for a period
+      of time, and the resulting JavaScript is then served as the response.
+    </p>
+    <p>
+      On future requests, the cached version is returned (making the response as
+      fast as possible). If needed, the cached version can be cleared using the <span class='inline_code'>--force</span> flag.
+    </p>
+    <br />
+    
+    <h3>Does this make debugging difficult?</h3>
+    <p>
+      Obfuscating and combining all your scripts and styles would make debugging difficult,
+      but you don't need to worry. When you are testing your site locally or when you include
+      the <span class='inline_code'>--debug</span> flag, the scripts are neither combined nor minified.
+    </p>
+    <p>
+      This is accomplished using a <span class='inline_code'>&lt;script src='...</span> tag for each script
+      and a <span class='inline_code'>&lt;link href='...</span> tag for each stylesheet.
+    </p>
+    <p>
+      For LESS and CoffeeScript, this means the code must be parsed locally using LESS.js and CoffeeScript.js.
+    </p>
+    <br />
+    
+    <h3>In what order are the assets rendered?</h3>
+    <p>
+      All stylesheets are rendered before any scripts. All urls are rendered
+      before all packages.  Package dependencies are always included before the
+      package itself.
+    </p>
+    <br />
+    
+    <h3>Is the bundle served through a CDN?</h3>
+    <p>
+      Not yet. To request it as a feature, tweet at me: <a href='http://twitter.com/bendytree'>@BendyTree</a>.
+      The problem right now is most CDNs don't offer custom SSL certificates for low budgets.
+    </p>
+    <br />
+    
+    <h3>Can I require a specific version of a package?</h3>
+    <p>
+      Not yet. To request it as a feature, tweet at me: <a href='http://twitter.com/bendytree'>@BendyTree</a>.
+      I'd like to hear any suggestions on how we'd approach this. Probably something like <span class='inline-code'>jquery-1.9.1</span>.
+    </p>
+    <br />
+    
+    <h3>How is CSS served through JavaScript?</h3>
+    <p>
+      It depends. In production mode, the minified CSS is written to the DOM like this:<br />
+      <span class='inline_code'>document.write('&lt;style type="text/css">body{ color:red; }&lt;/style>');</span>
+    </p>
+    <p>
+      In debug mode, the stylesheet is referenced through a link tag:<br />
+      <span class='inline_code'>document.write('&lt;link href="..." />');</span>
+    </p>
+    <br />
+    
+    <h3>Will this work if there's no internet connection?</h3>
+    <p>
+      No, it won't. So if you do a lot of not-connected-to-the-internet development then
+      this probably isn't for you. If you reference jQuery through a CDN during development
+      then you're already relying on an internet connection, so you're ok.
+    </p>
+    <br />
+    
+    <h3>What kind of technology is behind this thing?</h3>
+    <p>
+      <a href='http://nodejs.org'>NodeJS</a>, <a href='http://www.mongodb.org'>MongoDB</a>, <a href='http://redis.io'>Redis</a>, and <a href='http://www.heroku.com'>Heroku</a>.
+    </p>
+    <br />
+    
+  </div>
+  
+  
+  <script type='text/javascript'>
+  $(function(){
+      $("h3").each(function(){
+          var h3 = $(this);
+          var id = h3.text().replace(/[^a-z]/gi, '');
+          h3.attr("id", id);
+          $(".questions").append(
+            $("<a></a>").text(h3.text()).attr("href", "#"+id).append("<br />")
+          );
+      });
+  });
+  </script>

@@ -1,0 +1,49 @@
+
+
+    <style type='text/css'>
+      .examples .title{
+        margin-top:10px;
+        color:#444;
+        text-shadow:0 1px 0 rgba(255,255,255,.3);
+      }
+      .examples .example .code {
+        height:150px;
+      }
+      @media screen and (max-width: 767px) {
+      .examples .example .code {
+        height:auto;
+      }
+      }
+    </style>
+    
+  
+  <div class='grid-100 mobile-grid-100'>
+    <h2>Overview</h2>
+    <p>
+      Heeep.it automatically minifies and bundles your JavaScript, CSS, CoffeeScript, and LESS on demand. 
+      For common packages like jQuery or underscore, you can just include the package name.
+    </p>
+  </div>
+  
+  <div class='examples'>
+    <div class='example before grid-50 mobile-grid-100'>
+      <div class='title'>BEFORE</div>
+      <div class='code'>
+        ...<br />
+        &lt;script src='//somecdn.com/jquery.js'>&lt;/script><br />
+        &lt;script src='//somecdn.com/jquery-ui.js'>&lt;/script><br />
+        &lt;script src='//yoursite.com/site.coffee'>&lt;/script><br />
+        &lt;link href='//somecdn.com/jquery-ui.css'/><br />
+        &lt;link href='//yoursite.com/960.css'/><br />
+        &lt;link href='//yoursite.com/site.less'/><br />
+        ...
+      </div>
+    </div>
+  
+    <div class='example after grid-50 mobile-grid-100'>
+      <div class='title'>AFTER</div>
+      <div class='code'>
+        &lt;script src='//go.heeep.it?jquery-ui,960,site.coffee,site.less'>&lt;/script>
+      </div>
+    </div>
+  </div>

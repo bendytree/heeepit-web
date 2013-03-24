@@ -1,0 +1,118 @@
+
+  body {
+    background-color:#1b6e90;
+    background-color:#e2e2e2;
+    font-family:'Lucida Grande', Verdana, sans-serif;
+    background-imageXXX:url(http://www.deceptionist.co.uk/wp-content/uploads/2013/01/crumpled_white_paper_texture_by_melemel.jpeg);
+    margin:0;
+    padding:0;
+  }
+  .page_stretch{
+    max-width:1000px;
+    margin:auto;
+  }
+  p{
+    line-height:1.8em;
+    color:#444;
+    text-shadow:0 1px 0 #FFF;
+  }
+  a {
+    color:#06a;
+    font-weight:bold;;
+  }
+  a:hover {
+    color:#0af;
+  }
+  .hr {
+    height:0px;
+    border-top:solid 1px rgba(0,0,0,.1);
+    border-bottom:solid 1px rgba(255,255,255,.6);
+  }
+  .clear {
+    clear:both;
+  }
+  .page_header {
+    text-align:center;
+    margin:50px 0 40px;
+  }
+  .page_header h1 {
+    font-size:100pt;
+    line-height:1em;
+    margin:0;
+    color:#444;
+    text-shadow:0 2px 1px #FFF, 0 -2px 1px #000;
+  }
+  @media screen and (max-width: 767px) {
+  .page_header h1 {
+    font-size:40pt;
+  }
+  }
+  .page_header p {
+    color:#666;
+    font-size:16pt;
+    text-shadow:0 1px 0 #FFF;
+  }
+  
+  .page_links {
+    text-align:center;
+    padding:30px 0;
+    background-color:rgba(255,255,255,.3);
+  }
+  .page_links a {
+    color:#06a;
+    font-weight:bold;
+    text-decoration:none;
+    padding:10px 18px;
+    text-shadow:none;
+  }
+  .page_links a:hover, .page_links a.active {
+    background-color:#F09;
+    color:#fff;
+  }
+  .page_links a.active {
+    box-shadow:0 0 10px 5px #FFF;
+  }
+  @media screen and (max-width: 767px) {
+  .page_links a {
+    display:block;
+  }
+  }
+  .page_body {
+    margin:30px 0;
+  }
+  .page_body h2 {
+    color:#444;
+    text-shadow:0 1px 0 rgba(255,255,255,.3);
+  }
+  .page_footer {
+    text-align:center;
+    margin:30px 0;
+    font-size:10pt;
+  }
+  
+  
+  
+  
+  .inline_code {
+    background-color:rgba(50,50,50,0.1);
+    font-size:11pt;
+    padding:3px;
+    text-shadow:none;
+    font-family:monospace;
+  }
+  .code {
+    background-color:rgba(0,70,200,.8);
+    margin:15px 0 0 0;
+    padding:20px;
+    font-size:10pt;
+    color:#FFF;
+    font-family:monospace;
+  }
+  .code .hi {
+      color:#F6c;
+  }
+  .code .comment {
+      color:#7ac;
+  }
+  
+  

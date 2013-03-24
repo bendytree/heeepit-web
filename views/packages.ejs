@@ -1,0 +1,52 @@
+
+<style type="text/css">
+  .package {
+    background-color:#eee;
+    border:solid 3px #ccc;
+    border-radius:10px;
+    height:200px;
+    padding:10px;
+    overflow:hidden;
+  }
+  .package h2 {
+    font-size:13pt;
+    padding:0;
+    margin:0;
+  }
+  .package .name {
+    margin:10px 0;
+  }
+  .package .description {
+    font-size:9pt;
+    color:#999;
+  }
+  .package a {
+    font-size:10pt;
+    margin:0 0 10px 0;
+    display:block;
+  }
+</style>
+
+  <div class='grid-100 mobile-grid-100'>
+    <h2>Packages</h2>
+  
+    <div class='grid-container'>
+        <% packages.sort(function(a,b){ 
+             var nameA=a.name.toLowerCase(), nameB=b.name.toLowerCase();
+             if (nameA < nameB) return -1;
+             if (nameA > nameB) return 1;
+             return 0;
+           });
+           for(var i=0; i<packages.length; i++){
+              var package = packages[i];
+              %>
+              <div class='package grid-33 mobile-grid-100'>
+                <h2><%- package.title %></h2>
+                <div class='name'><span class='inline_code'><%- package.name %></span></div>
+                <div><a href='<%- package.website %>'><%- package.website %></a></div>
+                <div class='description'><%- package.description %></div>
+              </div>
+        <% } %>
+    </div>
+  </div>
+  
