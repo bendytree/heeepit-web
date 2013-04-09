@@ -116,3 +116,24 @@
   }
   
   
+  
+  
+
+@-webkit-keyframes redGlow {
+    0% { background-color:#522; } 
+    50% { background-color:#a22; }
+    100% { background-color:#522; }
+}
+
+.proofOfConcept {
+    color:#FFF; 
+    padding:10px 0; 
+    box-shadow: inset 0 0 5px #000000;
+    background-color:#522;
+    border:solid 1px #EEE;
+    
+    -webkit-animation-name: redGlow;
+    -webkit-animation-duration: 3s;
+    -webkit-animation-iteration-count: infinite;
+}
+  

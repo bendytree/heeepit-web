@@ -7,25 +7,25 @@ app.use(require('express-ejs-layouts'));
 
 app.use(express.static("public"));
 
-app.get("/", function(req, res){
+app.get("/", function (req, res){
     res.render('home.ejs', { layout:'master' });
 });
-app.get("/getting-started", function(req, res){
+app.get("/getting-started", function (req, res){
     res.render('getting-started.ejs', { layout:'master' });
 });
-app.get("/packages", function(req, res){
+app.get("/packages", function (req, res){
     res.render('packages.ejs', { layout:'master', packages:getPackages() });
 });
-app.get("/faq", function(req, res){
+app.get("/faq", function (req, res){
     res.render('faq.ejs', { layout:'master' });
 });
 
 var port = process.env.PORT || 3000;
-app.listen(port, function(){
-    console.log('Listening on port 3000');
+app.listen(port, function (){
+    console.log('Listening on port: '+port);
 });
 
-var getPackages = function(){
+var getPackages = function (){
     var srcs = [
         {
             name: 'jquery',
